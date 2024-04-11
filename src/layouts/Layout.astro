@@ -1,0 +1,108 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import WaterBrand from "../components/WaterBrand.astro";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Meta tags -->
+		<meta charset="UTF-8" />
+		<!-- Open Graph Prtocol -->
+		<meta
+			property="og:title"
+			content="Sebastian 2002 AOE 2 Professional Player"
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Sebastian 2002" />
+		<meta name="canonical" content="https://sebastian2002.vercel.app/" />
+		<meta
+			name="keywords"
+			content="Age of Empires 2, AOE2, Sebastian 2002, Strategy, Microsoft, Pro Player, Streaming, Twitch, Youtube, Esports, Competitive, Tournaments, Professional, Player, Tactics, Epic Plays, Gaming Secrets, Official Website"
+		/>
+		<meta
+			property="og:description"
+			content="Explore the strategic world of Age of Empires 2 with Sebastian 2002, a dedicated professional player passionate about competition. Discover his tactics, epic plays, and gaming secrets on his official website."
+		/>
+		<meta property="og:url" content="https://sebastian2002.vercel.app/" />
+		<meta property="og:image" content="../img/logo-oficial.jpg" />
+
+		<!-- cambiar logo -->
+
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/logoSebaOficial.jpg" />
+		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions />
+		<title>{title}</title>
+	</head>
+
+	<body>
+		<main>
+			<slot />
+			<WaterBrand />
+		</main>
+		<style is:global>
+			@import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;800&display=swap");
+
+			:root {
+				--razzmatazz: oklch(0.65 0.3 4.5);
+				--goldenyellow: oklch(0.9 0.2 90);
+				--tangerine: oklch(0.7 0.28 53);
+			}
+			@media (width < 950px) {
+				body,
+				main,
+				html {
+					height: 100%;
+				}
+			}
+			/* view transition Api */
+			::view-transition-new(root),
+			::view-transition-old(root) {
+				animation-duration: 0.3s;
+			}
+
+			/* view transition Api */
+			:root {
+				--accent: 136, 58, 234;
+				--accent-light: 224, 204, 250;
+				--accent-dark: 49, 10, 101;
+				--accent-gradient: linear-gradient(
+					141deg,
+					#202020 0%,
+					white 50%,
+					indigo 100%
+				);
+			}
+
+			html {
+				/* font-family: system-ui, sans-serif; */
+				font-family: "Grenze Gotisch", system-ui, sans-serif;
+
+				font-size: 20px;
+				/* background: #13151a; */
+				background: #0d1b2a;
+				color-scheme: dark light;
+				position: relative;
+			}
+
+			section:before {
+				z-index: -1;
+				content: "";
+				position: absolute;
+				background-image: url("../img/war1.jpg");
+				view-transition-name: fade;
+				background-size: cover;
+				background-position: bottom;
+				height: 100%;
+				width: 100%;
+				opacity: 0.2;
+			}
+		</style>
+	</body>
+</html>

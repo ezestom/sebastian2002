@@ -1,0 +1,26 @@
+---
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About">
+	<span class="icon z-10 text-7xl font-normal absolute top-1 left-0">♗</span>
+	<Section
+		icon="♗"
+		titleEsp=" Sobre mi"
+		bodyEsp="Mi nombre es Sebastián, soy un jugador uruguayo de Age of Empires 2 Definitive Edition, tengo 22 años y actualmente compito en el clan FOX, ubicándome entre los mejores 16 jugadores del mundo con un elo máximo de 2700 puntos. Soy una persona competitiva a la que le encanta la estrategia y lo medieval, lo que me convierte en un gran amante de este juego. Comencé a jugarlo desde pequeño, pero lo abandoné sin darme cuenta de que se podía jugar en modo multijugador. Hace unos 4 años, decidí volver a competir al darme cuenta de que el juego seguía vivo. Tuve mi primera experiencia en la plataforma Voobly, donde jugué durante al menos 1 año y alcancé un elo aproximado de 1900, lo que me convirtió en el mejor jugador uruguayo en ese momento. Aunque no participé en torneos de gran calibre, ya que no estaba entre los mejores 100 del mundo. Con el lanzamiento del Definitive Edition en 2020, comencé a competir más activamente para escalar en la clasificación y participar en torneos. Durante mi trayectoria, he pasado por clanes como SURU, Darkside y finalmente FOX, donde actualmente me encuentro. Actualmente entre en los torneos tier S de :Hidden cup 5 ,y King of the desert 5 y llegue a las ultimas instancias de clasificación en torneos de Redbull Wololo Legacy y NAC5. Disfruto compartiendo mi estilo de juego con mis espectadores y seguidores, y mi objetivo es seguir escalando hasta lograr estar entre los cinco mejores jugadores en la escena competitiva."
+	/>
+</Layout>
+
+<style>
+	.icon {
+		opacity: 0.3;
+		color: white;
+		view-transition-name: king;
+	}
+	@media (width < 950px) {
+		.icon {
+			display: none;
+		}
+	}
+</style>

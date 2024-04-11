@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import warrior from "../img/warrior5.jpg";
+import seba from "../img/sebastian2002-title.png";
+import aoe from "../img/AOE.png";
+---
+
+<section class="max-h-screen max-w-screen relative">
+	<article class="header-article">
+		<a href="/home">
+			<Image class="seba" src={seba} alt="seba-logo" />
+			<code class="text-xs absolute bottom-2 left-3
+			  text-slate-400"
+				>Click on Sebastian to go home <span>&rarr;</span>
+			</code>
+		</a>
+		<Image class="warrior" src={warrior} alt="warrior" />
+	</article>
+	<Image class="aoe" src={aoe} alt="aoe" />
+</section>
+
+<style>
+	section {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+	}
+	.warrior {
+		width: 100%;
+		height: 100vh;
+		object-fit: cover;
+		background-image: radial-gradient(
+				circle,
+				rgba(0, 0, 0, 0.8) 50%,
+				transparent 100%
+			),
+			radial-gradient(circle, transparent 0%, rgba(0, 0, 0, 0.8) 50%),
+			linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+			linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+		mask: radial-gradient(circle at center, white 15%, transparent 65%);
+	}
+	.seba {
+		max-width: 450px;
+		position: absolute;
+		z-index: 1;
+		top: 1rem;
+		left: 1rem;
+		transition: all 0.5s ease-in-out;
+		view-transition-name: seba;
+		filter: drop-shadow(0 0 0.05em #45d3e0) brightness(1.3);
+	}
+
+	.seba:hover {
+		filter: drop-shadow(0 0 0.5em #45d3e0) brightness(1.5);
+	}
+
+	section::before {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		background-image: url(../img/war1.jpg);
+		view-transition-name: fade;
+		background-size: cover;
+		background-position: bottom;
+		height: 100%;
+		width: 100%;
+	}
+	.aoe {
+		max-width: 225px;
+		opacity: 0.25;
+		position: fixed;
+		z-index: 1;
+		bottom: -1rem;
+		right: -1rem;
+		view-transition-name: aoe;
+	}
+	@media (width < 900px) {
+		.aoe {
+			top: 75%;
+			right: 0;
+			left: 0;
+			margin: auto;
+		}
+
+		.seba {
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			max-width: 400px;
+		}
+	}
+</style>

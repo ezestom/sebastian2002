@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import aoe from "../img/AOE.png";
+---
+
+<div>
+	<Image class="aoe" src={aoe} alt="aoe" />
+</div>
+
+<style>
+	.aoe {
+		position: absolute;
+		left: -.6rem;
+		width: 210px;
+		bottom: 3rem;
+		opacity: 0.25;
+		z-index: -10;
+		view-transition-name: aoe;
+	}
+	@media (width < 950px) {
+		.aoe {
+			top: 0;
+			left: 0;
+			width: 125px;
+		}
+	}
+</style>

@@ -1,0 +1,77 @@
+---
+import logoAstro from "../../public/favicon.svg";
+import { Image } from "astro:assets";
+const title = "Created & Designed by Eze";
+const text = "Powered by Astro";
+---
+
+<a
+	class="water-brand text-white text-center text-xs p-1 w-full"
+	href="https://ezestom.github.io/portfolio/"
+	target="_blank">
+	<p class="">
+		{title}
+		{(<br />)}
+		{text}
+	</p>
+
+	<a href="https://astro.build/" target="_blank">
+		<Image class="img" src={logoAstro} alt="Astro Logo" />
+	</a>
+</a>
+
+<style>
+	@media (width < 1150px) {
+		.water-brand {
+			display: none;
+		}
+		.img {
+			display: none;
+		}
+	}
+	.water-brand {
+		position: absolute;
+		left: 0.5rem;
+		bottom: 1.75rem;
+		margin: auto;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 7px;
+		width: 160px;
+		transition: filter 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+		/* background-color: #23262d; */
+		background-color: #001d3d;
+	}
+	.water-brand > p,
+	.water-brand > div > img {
+		color: rgba(255, 255, 255, 0.8);
+	}
+	.water-brand:hover {
+		filter: brightness(1.2) drop-shadow(0 0 0.2rem #45d3e0);
+		cursor: pointer;
+	}
+	.img {
+		position: absolute;
+		left: 8.25rem;
+		margin: auto;
+		bottom: 2rem;
+		width: 35px;
+		background-color: white;
+		border-radius: 50%;
+		transform: rotate(25deg);
+		transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+		animation: color;
+	}
+	.img:hover {
+		transform: rotate(0deg) scale(1.3);
+		filter: drop-shadow(0 0 0.2rem #45d3e0);
+		background-color: #45d3e0;
+	}
+	@keyframes color {
+		to 0% {
+			background-color: white;
+		}
+		to 100% {
+			background-color: #45d3e0;
+		}
+	}
+</style>

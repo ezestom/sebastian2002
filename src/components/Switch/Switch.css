@@ -1,0 +1,19 @@
+.checkbox-wrapper-10 {
+	position: absolute;
+	right: 68px;
+	bottom: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (width < 950px) {
+	.checkbox-wrapper-10 {
+		top: 4.5rem;
+		left: 1.75rem;
+		position: absolute;
+		right: auto;
+		bottom: auto;
+	}
+}

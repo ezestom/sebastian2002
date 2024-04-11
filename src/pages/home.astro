@@ -1,0 +1,320 @@
+---
+import Card from "../components/Card.astro";
+import { Image } from "astro:assets";
+import aoe2 from "../img/home_picture.jpg";
+import Layout from "../layouts/Layout.astro";
+import { Youtube } from "../components/Youtube.jsx";
+import LogoAge from "../components/LogoAge.astro";
+import LogoSeba from "../components/LogoSeba.astro";
+import logoSebaOficial from "../img/logoSebaOficial.jpg";
+---
+
+<!-- componente home en ASTRO -->
+<Layout title="Sebastian 2002 - AOE Pro Player">
+	<section class="h-screen p-0 m-0 w-screen flex items-center justify-center">
+		<a
+			href="https://librecounter.org/referer/show"
+			target="_blank"
+			class="w-2 absolute bottom-16 right-16 mx-auto ml-7 -z-1">
+			<img
+				src="https://librecounter.org/counter.svg"
+				referrer-policy="unsafe-url"
+			/>
+		</a>
+		<LogoSeba />
+		<ul
+			class="grid grid-cols-6 grid-rows-5 gap-1 md:gap-3 h-[90vh] max-w-[1100px] z-20">
+			<li class="col-span-3 row-span-2 rounded-lg relative">
+				<a
+					href="/aboutme"
+					class="about-conteiner absolute top-0 left-0 w-full h-full z-10">
+					<span
+						class="icon z-10 text-7xl font-normal absolute -left-2 top-1"
+						>♗</span
+					>
+					<h1 class="about">
+						Sobre mi
+						<span>&rarr;</span>
+					</h1>
+				</a>
+			</li>
+			<!-- Twitch -->
+			<li class="twitch social col-span-1 row-span-1 rounded-lg">
+				<Card
+					titleEsp="Twitch"
+					href="https://www.twitch.tv/sebastian2002"
+					target="_blank"
+					bodyEsp="Únete a mi canal de Twitch y mira mis directos, ¡sígueme!"
+				/>
+			</li>
+			<!-- redbull wallpaper -->
+			<li class="col-span-2 row-span-4 rounded-lg">
+				<a href="/gallery" class="relative">
+					<span
+						class="icon2 z-10 text-5xl font-normal absolute -left-1 top-0 opacity-30"
+						>♖</span
+					>
+
+					<Image
+						transition:persist
+						class="redbull w-full h-full object-cover rounded-lg"
+						src={aoe2}
+						alt="wallpaper-redbull-nicov"
+					/>
+				</a>
+			</li>
+
+			<!-- Youtube -->
+			<li class="col-span-1 row-span-1 rounded-lg">
+				<Card
+					href={"https://www.youtube.com/channel/UCfndZhdX7djV-cwo9bCyEIw"}
+					target="_blank"
+					titleEsp="YouTube"
+					bodyEsp="Bienvenido a mi canal de YouTube. ¡Suscríbete!"
+				/>
+			</li>
+
+			<!-- Merchandising -->
+
+			<li class="col-span-2 row-span-1 rounded-lg relative">
+				<span
+					class="icon4 z-10 text-4xl font-normal absolute left-0 -top-1 opacity-30"
+					>♘</span
+				>
+				<Card
+					href="/merchandising"
+					titleEsp="Merchandising"
+					bodyEsp="Sección de merchandising, próximamente disponible. ¡Estate atento!🚧"
+				/>
+			</li>
+			<!-- Contacto Form -->
+			<li class="col-span-1 row-span-1 rounded-lg relative">
+				<Card
+					href="/form"
+					titleEsp="Contacto"
+					bodyEsp="Escribime por el form, te responderé a la brevedad."
+				/>
+			</li>
+			<!-- Twitter -->
+			<li class="col-span-1 row-span-1 rounded-lg">
+				<Card
+					href={"https://twitter.com/Sebastian_AOE"}
+					target="_blank"
+					titleEsp="Twitter"
+					bodyEsp="Vente a Twitter para las actualizaciones y discusiones!"
+				/>
+			</li>
+
+			<li class="video col-span-3 row-span-2 rounded-lg">
+				<!-- <Player/> -->
+				<Youtube client:visible transition:persist />
+			</li>
+			<!-- Discord -->
+			<li class="discord social col-span-1 row-span-1 rounded-lg">
+				<Card
+					titleEsp="Discord"
+					href="https://discord.com/invite/xyJNuyMspm"
+					target="_blank"
+					bodyEsp=" ¡Te invito a unirte a la comunidad de Age of Empires en Discord!"
+				/>
+			</li>
+			<!-- Donations -->
+			<li class="col-span-1 row-span-1 rounded-lg">
+				<Card
+					href={"/donations"}
+					titleEsp="Donaciones"
+					bodyEsp="Para apoyar mi contenido, estos son los links ¡Gracias!"
+				/>
+			</li>
+			<li class="col-span-2 row-span-1 rounded-lg relative">
+				<span
+					class="icon3 z-10 text-4xl font-normal absolute left-0 -top-1 opacity-30"
+					>♟</span
+				>
+				<Card
+					href={"/classes"}
+					titleEsp="Clases de AOE 2"
+					bodyEsp="¡Domina el juego como un verdadero profesional! Contáctame por Discord o Email ¡Empecemos juntos a mejorar tu juego y a disfrutar al máximo! "
+				/>
+			</li>
+		</ul>
+	</section>
+	<a
+		href="/"
+		class="absolute bottom-7 right-2 w-[150px] z-0 logoOficial hidden md:block transition-all">
+		<Image
+			src={logoSebaOficial}
+			alt="Sebastian 2002"
+			class="rounded-full"
+		/></a
+	>
+	<LogoAge />
+</Layout>
+
+<style>
+	.logoOficial {
+		animation: pulse 5s infinite ease;
+		opacity: 0.85;
+	}
+	.logoOficial:hover {
+		transform: scale(1.03) rotate(3deg);
+	}
+	.icon {
+		view-transition-name: king;
+	}
+	.icon2 {
+		view-transition-name: pawn;
+	}
+	.icon3 {
+		view-transition-name: rook;
+	}
+	.icon4 {
+		view-transition-name: horse;
+	}
+
+	.about-conteiner {
+		color: #d3d4d5;
+		height: 100%;
+		background-size: 400%;
+		border-radius: 8px;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+		background-image: url("../img/about.jpeg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transition: all 0.3s ease-in-out;
+	}
+	.about {
+		background-color: #23262dd9;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		font-size: 1.25em;
+	}
+	.about-conteiner:hover,
+	.redbull:hover {
+		background-position: center;
+		transform: scale(1.02);
+	}
+
+	.redbull {
+		view-transition-name: redbull;
+		transition: all 0.3s ease-in-out;
+	}
+
+	li {
+		overflow: hidden;
+	}
+	section {
+		position: relative;
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		color: white;
+		font-size: 20px;
+		max-width: 100vw;
+		max-height: 100vh;
+	}
+	.video {
+		overflow: hidden;
+		background-color: rgba(255, 255, 255, 0.1);
+		display: grid;
+		align-items: center;
+		transition: all 0.3s ease-in-out;
+	}
+	.video:hover {
+		filter: drop-shadow(0px 0px 10px #45d3e0);
+		animation: pulse 4s infinite ease;
+	}
+	@keyframes pulse {
+		0% {
+			filter: drop-shadow(0px 0px 0.25em #45d3e0);
+		}
+		25% {
+			filter: drop-shadow(0px 0px 0.75em #45d3e0);
+		}
+		50% {
+			filter: drop-shadow(0px 0px 2em #45d3e0);
+		}
+		75% {
+			filter: drop-shadow(0px 0px 0.75em #45d3e0);
+		}
+		100% {
+			filter: drop-shadow(0px 0px 0.25em #45d3e0);
+		}
+	}
+	@media (width < 950px) {
+		.icon,
+		.icon2,
+		.icon3,
+		.icon4 {
+			display: none;
+		}
+
+		ul {
+			position: absolute;
+			top: 7rem;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(6, 1fr);
+			padding: 0 1%;
+			height: 100%;
+			margin-bottom: 2rem;
+		}
+		li {
+			height: 125px;
+		}
+		/* sobre mi */
+		li:nth-child(1) {
+			grid-column: 1/3;
+			grid-row: 1/3;
+			height: 250px;
+		}
+		/* link youtube */
+		li:nth-child(2) {
+			grid-column: 1/2;
+			grid-row: 6/7;
+		}
+
+		li:nth-child(3) {
+			grid-column: 2/3;
+			grid-row: 5/7;
+		}
+		/*twitter */
+		li:nth-child(4) {
+			grid-column: 1/2;
+			grid-row: 4/5;
+		}
+		/* próx torneos */
+		li:nth-child(5) {
+			grid-column: 1/3;
+			grid-row: 5/6;
+		}
+		/* clases aoe */
+		li:nth-child(6) {
+			grid-column: 2/3;
+			grid-row: 4/5;
+		}
+		li:nth-child(7) {
+			grid-column: 2/3;
+			grid-row: 6/7;
+		}
+		/* video youtube */
+		li:nth-child(8) {
+			grid-column: 1/3;
+			grid-row: 7/8;
+			height: 250px;
+		}
+
+		/* discord */
+		li:nth-child(9) {
+			grid-column: 2/3;
+			grid-row: 8/9;
+			margin-bottom: 1rem;
+		}
+		.redbull {
+			display: none;
+		}
+	}
+</style>

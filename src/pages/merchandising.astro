@@ -1,0 +1,25 @@
+---
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Merchandising">
+	<span class="icon z-10 text-7xl font-normal absolute top-1 left-0">♘</span>
+	<Section
+		icon="♘"
+		titleEsp="Merchandising"
+		bodyEsp="Próximamente! Sección en construcción 🚧"
+	/>
+</Layout>
+<style>
+	.icon {
+		opacity: 0.3;
+		color: white;
+		view-transition-name: horse;
+	}
+	@media (width < 950px) {
+		.icon {
+			display: none;
+		}
+	}
+</style>
