@@ -18,14 +18,19 @@ export function ReactForm() {
 
 	const openDialog = () => {
 		setDialog(true);
-		document.body.style.overflow = "hidden";
-		document.getElementById("navbar").style.display = "none";
+		toggleNavbar(false);
 	};
 
 	const closeDialog = () => {
 		setDialog(false);
-		document.body.style.overflow = "auto";
-		document.getElementById("navbar").style.display = "flex";
+		toggleNavbar(true);
+	};
+
+	const toggleNavbar = (show) => {
+		const navbar = document.getElementById("navbar");
+		if (navbar) {
+			navbar.style.display = show ? "flex" : "none";
+		}
 	};
 
 	const isMessageSuccess = () => {
@@ -46,6 +51,7 @@ export function ReactForm() {
 			});
 
 			if (response.ok) {
+				// Mostrar mensaje de éxito y cerrar el diálogo solo si la solicitud es exitosa
 				toast(
 					"¡Formulario enviado con éxito! Gracias por su confianza.",
 					{
@@ -96,11 +102,11 @@ export function ReactForm() {
 						<form
 							onSubmit={handleSubmit}
 							method="POST"
-							action="https://formsubmit.co/ezequielstom@gmail.com">
+							action="https://formsubmit.co/gastelumendisebastian@gmail.com">
 							<input
 								type="hidden"
 								name="_cc"
-								value="ezequielstom@gmail.com"
+								value="gastelumendisebastian@gmail.com"
 							/>
 
 							<input
